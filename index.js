@@ -4,7 +4,7 @@ const { buildSchema } = require('graphql');
 const schema = buildSchema(`
 
     type Query{
-        getUser: [user]
+        getUsers: [user]
     }
 
     type Mutation{
@@ -17,16 +17,16 @@ const schema = buildSchema(`
     }
 `);
 
-let userAux = [];
+let users = [];
 
 
 const resolver = {
     agregarUsuario: args => { 
         let userAdd = {name: args.name, age: args.age};
-        userAux.push(userAdd);
-        return userAdd;
+        users.push(userAdd);
+        return users;
     },
-    getUser: userAux
+    getUsers: users
 }
 
 const app = express();
