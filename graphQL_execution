@@ -1,0 +1,8 @@
+query { getUser{name, age} }
+
+mutation {
+  agregarUsuario(name:"D", age:"20"){
+    name,
+    age
+  }
+}
